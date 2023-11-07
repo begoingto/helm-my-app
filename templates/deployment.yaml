@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: h-spring-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: h-spring
+  template:
+    metadata:
+      labels:
+        app: h-spring
+    spec:
+      containers:
+      - name: h-spring
+        image: 69966/springgradleimg:1.1.1
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+          - name: h-spring-volume
+            mountPath: /app/src/main/resources/images
+      volumes:
+        - name: h-spring-volume
+          nfs:
+            server: 10.148.0.19
+            path: /opt/nfs/data
