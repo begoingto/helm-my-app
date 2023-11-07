@@ -4,7 +4,7 @@ metadata:
   name: h-spring-ingress
   annotations:
     kubernetes.io/ingressClassName: "nginx"
-    cer-manager.io/cluster-issuer: "letsencrypt-prod"
+    cer-manager.io/cluster-issuer: "letsencrypt"
 spec:
   tls:
     - hosts:
