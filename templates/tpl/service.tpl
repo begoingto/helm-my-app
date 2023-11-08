@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{.Values.appname}}-svc
+  name: {{.Values.appName}}-svc
 spec:
   type: ClusterIP
   selector:
-    app: {{.Values.appname}}-app
+    app: {{.Values.appName}}-app
   ports:
     - protocol: TCP
       port: 80
