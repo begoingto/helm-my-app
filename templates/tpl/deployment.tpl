@@ -18,4 +18,9 @@ spec:
           image: {{.Values.image}}:{{.Values.tag}}
           ports:
             - containerPort: {{.Values.containerPort}}
+          env:
+            {{- range .Values.envs}}
+            - name: {{.name}}
+              value: {{.value}}
+            {{- end}}
 {{- end}}

@@ -1,6 +1,18 @@
-appName: reactjs
-image: 69966/reactjsimage
-tag: latest
-containerPort: 80
+# appName: reactjs
+# image: 69966/reactjsimage
+# tag: latest
+# containerPort: 80
 
-domain: f.sen-pai.live
+# domain: f.sen-pai.live
+
+appName: reactjs
+image: postgres
+tag: 16
+containerPort: 5432
+envs:
+  - name: POSTGRES_USER
+    value: postgres
+  - name: POSTGRES_PASSWORD
+    value: postgres
+  - name: POSTGRES_DB
+    value: postgres
