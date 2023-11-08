@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: react-dep
+  name: {{ .Values.appName }}-dep
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: react-app
+      app: {{.Values.appName}}-app
   template:
     metadata:
       labels:
-        app: react-app
+        app: {{.Values.appName}}-app
     spec:
       containers:
-        - name: react-app
-          image: 69966/reactjsimage:latest
+        - name: {{.Values.appName}}-container
+          image: {{.Values.image}}:{{.Values.tag}}
           ports:
-            - containerPort: 80
+            - containerPort: {{.Values.containerPort}}
 {{- end}}

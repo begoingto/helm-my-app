@@ -1,0 +1,6 @@
+appName: reactjs
+image: 69966/reactjsimage
+tag: latest
+containerPort: 80
+
+domain: f.sen-pai.live

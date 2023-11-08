@@ -2,11 +2,11 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: react-svc
+  name: {{.Values.appname}}-svc
 spec:
   type: ClusterIP
   selector:
-    app: react-app
+    app: {{.Values.appname}}-app
   ports:
     - protocol: TCP
       port: 80

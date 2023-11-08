@@ -8,16 +8,16 @@ metadata:
 spec:
   tls:
   - hosts:
-    - react-app.example.com
+    - {{.Values.domain}}
     secretName: h-react-tls
   rules:
-  - host: reactjs.begoingtodev.test
+  - host: {{.Values.domain}}
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: react-svc
+            name: {{.Values.appName}}-svc
             port:
               number: 80
