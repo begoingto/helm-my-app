@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: h-spring-svc
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
     app: h-spring
   ports:
