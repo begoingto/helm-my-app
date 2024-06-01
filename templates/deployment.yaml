@@ -14,14 +14,6 @@ spec:
     spec:
       containers:
       - name: h-spring
-        image: 69966/springgradleimg:1.1.1
+        image: begoingto/spring-gradle-app:latest
         ports:
         - containerPort: 8080
-        volumeMounts:
-          - name: h-spring-volume
-            mountPath: /app/src/main/resources/images
-      volumes:
-        - name: h-spring-volume
-          nfs:
-            server: 10.148.0.19
-            path: /opt/nfs/data
